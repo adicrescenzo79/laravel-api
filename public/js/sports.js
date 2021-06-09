@@ -96,12 +96,17 @@
 var app = new Vue({
   el: '#root',
   data: {
-    sports: []
+    sports: [],
+    api_token: '34RwbKYJk8uuJN4XDknCahETEq5RVYJ410fW3HbFVYJqqjsvb9NJKGSCAgOkOjSGnftGjPFK9XXZo3DB'
   },
   created: function created() {
     var _this = this;
 
-    axios.get('http://localhost:8000/api/sports').then(function (response) {
+    axios.get('http://localhost:8000/api/sports', {
+      params: {
+        api_key: this.api_token
+      }
+    }).then(function (response) {
       _this.sports = response.data.data; // console.log(response.data.data);
     });
   }

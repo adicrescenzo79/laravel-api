@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/sports', 'SportController@index');
+Route::get('/sports', 'SportController@index')->middleware('checkApiToken');
 Route::post('/sports', 'SportController@store');
