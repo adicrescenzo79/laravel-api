@@ -17,7 +17,7 @@ class CreateSportsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->tinyInteger('with_ball')->(0);
+            $table->tinyInteger('with_ball')->default(0);
             $table->timestamps();
         });
     }
