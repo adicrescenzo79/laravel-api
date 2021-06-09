@@ -14,7 +14,12 @@ class SportController extends Controller
      */
     public function index()
     {
-        //
+      $sports = Sport::all();
+
+      return response()->json([
+        'data' => $sports,
+        'success' => true,
+      ]);
     }
 
     /**
@@ -35,7 +40,15 @@ class SportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->all();
+
+      //tutte le operazioni di store
+
+      return response()->json([
+        'message' => 'Sport salvato',
+        'success' => true,
+      ]);
+
     }
 
     /**
